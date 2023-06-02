@@ -1,16 +1,16 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/",
-    name: "home",
-    component: HomeView,
-  },
-];
+let routes = [];
+
+const files = require.context("@/router", false, /\.js$/);
+files.keys().forEach((key) => {
+  if (key === "./index.js") return;
+  const defaultList = files(key).default;
+  routes = routes.concat(defaultList);
+});
 
 const router = new VueRouter({
   mode: "history",
@@ -19,4 +19,3 @@ const router = new VueRouter({
 });
 
 export default router;
-

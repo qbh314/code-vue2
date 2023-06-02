@@ -20,9 +20,7 @@
                 )"
                 :key="index"
               >
-                <h2>
-                  <span>基础-{{ item }}</span>
-                </h2>
+                <router-link to="/">extend</router-link>
               </li>
             </ul>
           </div>
@@ -166,4 +164,3 @@ strong {
   }
 }
 </style>
-
