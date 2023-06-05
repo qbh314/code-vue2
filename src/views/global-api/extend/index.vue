@@ -1,5 +1,5 @@
 <template>
-  <div id="extend"></div>
+  <div id="extend">这是一个extends页面</div>
 </template>
 
 <script>
@@ -22,6 +22,7 @@ export default {
     },
   },
   mounted() {
+    console.log("执行");
     var Profile = Vue.extend({
       template:
         "<p class='full-name'>{{firstName}} {{lastName}} aka {{alias}}</p>",

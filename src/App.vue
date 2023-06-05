@@ -13,14 +13,11 @@
         <div class="sidebar-inner">
           <div class="list">
             <ul class="menu-root">
-              <li
-                v-for="(item, index) in Array.from(
-                  { length: 100 },
-                  (_, i) => i
-                )"
-                :key="index"
-              >
-                <router-link to="/">extend</router-link>
+              <li v-for="item in routes" :key="item.name">
+                <h3 :class="['nav-title']">
+                  {{ item.name }}
+                </h3>
+                <nav-item :list="item.children"></nav-item>
               </li>
             </ul>
           </div>
@@ -28,17 +25,36 @@
       </div>
       <div class="content guide with-sidebar index-guide">
         <router-view />
+        <!-- <Extend></Extend> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import NavItem from "@/components/nav-item.vue";
+// import Extend from "@/views/global-api/extend";
+
 export default {
+  components: {
+    NavItem,
+    // Extend,
+  },
   data() {
     return {
       list: [],
+      routes: [],
     };
+  },
+  mounted: function () {
+    let routes = [];
+    const files = require.context("@/router", false, /\.js$/);
+    files.keys().forEach((key) => {
+      if (key === "./index.js") return;
+      const defaultList = files(key).default;
+      routes = routes.concat(defaultList);
+    });
+    this.$data.routes = routes;
   },
 };
 </script>
@@ -113,6 +129,19 @@ strong {
 
       .sidebar {
         position: fixed;
+
+        .list {
+          .menu-root {
+            .nav-title {
+              margin-top: 18.7px;
+              margin-bottom: 18.7px;
+            }
+
+            .nav-title.active {
+              color: green;
+            }
+          }
+        }
       }
     }
   }
@@ -133,15 +162,10 @@ strong {
       padding: 35px 0px 60px 20px;
     }
 
-    .menu-list {
-      padding-left: 0;
-    }
-
     ul {
       list-style-type: none;
       margin: 0;
       line-height: 1.5em;
-      padding-left: 1em;
     }
 
     li {
