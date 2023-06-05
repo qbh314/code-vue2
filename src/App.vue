@@ -14,7 +14,12 @@
           <div class="list">
             <ul class="menu-root">
               <li v-for="item in routes" :key="item.name">
-                <h3 :class="['nav-title']">
+                <h3
+                  :class="[
+                    'nav-title',
+                    $route.meta.root === item.name ? 'active' : null,
+                  ]"
+                >
                   {{ item.name }}
                 </h3>
                 <nav-item :list="item.children"></nav-item>

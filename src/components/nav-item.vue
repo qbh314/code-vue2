@@ -5,7 +5,7 @@
         :class="[$route.path === item.path ? 'active' : '', 'nav-link']"
         :to="item.path"
       >
-        {{ item.path }}
+        {{ item.name }}
       </router-link>
       <nav-item :list="item.children"></nav-item>
     </div>
