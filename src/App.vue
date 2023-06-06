@@ -30,7 +30,6 @@
       </div>
       <div class="content guide with-sidebar index-guide">
         <router-view />
-        <!-- <Extend></Extend> -->
       </div>
     </div>
   </div>
@@ -38,12 +37,10 @@
 
 <script>
 import NavItem from "@/components/nav-item.vue";
-// import Extend from "@/views/global-api/extend";
 
 export default {
   components: {
     NavItem,
-    // Extend,
   },
   data() {
     return {

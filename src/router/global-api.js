@@ -1,8 +1,9 @@
 const globalApiRoutes = [
   {
-    path: "/global-api",
+    path: "/",
     name: "GlobalApi",
-    component: () => import("@/App.vue"),
+    redirect: "/extend",
+    component: () => import("@/views/global-api/index.vue"),
     children: [
       {
         path: "/extend",
@@ -19,6 +20,14 @@ const globalApiRoutes = [
           root: "GlobalApi",
         },
         component: () => import("@/views/global-api/slot-view/index.vue"),
+      },
+      {
+        path: "/mixin-view",
+        name: "MixinView",
+        meta: {
+          root: "GlobalApi",
+        },
+        component: () => import("@/views/global-api/mixin-view/index.vue"),
       },
     ],
   },
