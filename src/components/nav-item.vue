@@ -2,12 +2,12 @@
   <div>
     <div class="nav-item" v-for="item in list" :key="item.name">
       <router-link
-        :class="[$route.path === item.path ? 'active' : '', 'nav-link']"
+        :class="['nav-link', { active: $route.path === item.path }]"
         :to="item.path"
       >
         {{ item.name }}
       </router-link>
-      <nav-item :list="item.children"></nav-item>
+      <nav-item v-if="item.children?.length" :list="item.children"></nav-item>
     </div>
   </div>
 </template>
@@ -16,7 +16,14 @@
 export default {
   name: "nav-item",
   props: {
-    list: Array,
+    list: {
+      type: Array,
+      required: true,
+      default: () => [],
+      validator(value) {
+        return Array.isArray(value);
+      },
+    },
   },
 };
 </script>
@@ -24,8 +31,8 @@ export default {
 <style lang="less" scoped>
 .nav-item {
   position: relative;
-  padding-left: 15px;
   margin-top: 8px;
+  padding-left: 15px;
   font-size: 16px;
   cursor: pointer;
 
@@ -48,3 +55,4 @@ export default {
   }
 }
 </style>
+

@@ -14,15 +14,11 @@
           <div class="list">
             <ul class="menu-root">
               <li v-for="item in routes" :key="item.name">
-                <h3
-                  :class="[
-                    'nav-title',
-                    $route.meta.root === item.name ? 'active' : null,
-                  ]"
-                >
-                  {{ item.name }}
-                </h3>
-                <nav-item :list="item.children"></nav-item>
+                <h3>{{ item.name }}</h3>
+                <nav-item
+                  v-if="item.children?.length"
+                  :list="item.children"
+                ></nav-item>
               </li>
             </ul>
           </div>
@@ -48,15 +44,22 @@ export default {
       routes: [],
     };
   },
-  mounted: function () {
-    let routes = [];
-    const files = require.context("@/router", false, /\.js$/);
-    files.keys().forEach((key) => {
-      if (key === "./index.js") return;
-      const defaultList = files(key).default;
-      routes = routes.concat(defaultList);
-    });
-    this.$data.routes = routes;
+  methods: {
+    getRoutes() {
+      let routes = [];
+
+      const files = require.context("@/router", false, /\.js$/);
+      files.keys().forEach((key) => {
+        if (key === "./index.js") return;
+        const defaultList = files(key).default;
+        routes = routes.concat(defaultList);
+      });
+
+      return routes;
+    },
+  },
+  mounted() {
+    this.routes = this.getRoutes();
   },
 };
 </script>
@@ -84,6 +87,16 @@ h4,
 strong {
   font-weight: 600;
   color: #273849;
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 </style>
 
@@ -134,14 +147,6 @@ strong {
 
         .list {
           .menu-root {
-            .nav-title {
-              margin-top: 18.7px;
-              margin-bottom: 18.7px;
-            }
-
-            .nav-title.active {
-              color: green;
-            }
           }
         }
       }
@@ -190,3 +195,4 @@ strong {
   }
 }
 </style>
+
