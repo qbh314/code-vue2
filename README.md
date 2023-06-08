@@ -2,39 +2,37 @@
 <h1>Vue</h1>
 </div>
 
-**中文** | [English](./README.md)
-
 ## 简介
 
-Vue2 api 联系项目
+建立 vue2 的 demo 案例，学习 vue 的相关知识
 
 ## 安装使用
 
 - 获取项目代码
 
 ```bash
-git clone https://github.com/anncwb/vue-vben-admin.git
+git clone https://github.com/qbh314/code-vue2.git
 ```
 
 - 安装依赖
 
 ```bash
-cd vue-vben-admin
+cd code-vue2
 
-pnpm install
+npm install
 
 ```
 
 - 运行
 
 ```bash
-pnpm serve
+npm serve
 ```
 
 - 打包
 
 ```bash
-pnpm build
+npm build
 ```
 
 ## 如何贡献
@@ -66,3 +64,4 @@ pnpm build
   - `ci` 持续集成
   - `types` 类型定义文件更改
   - `wip` 开发中
+
