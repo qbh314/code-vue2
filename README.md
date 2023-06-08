@@ -1,4 +1,4 @@
-<div align="center"> <a href="https://github.com/qbh314/code-vue2.git"> <img alt="Logo" width="200" height="200" src="https://github.com/code-vue2/main/src/assets/logo.png"> </a> <br> <br>
+<div align="center"> <a href="https://github.com/qbh314/code-vue2.git"> <img width="100" src="https://vuejs.org/images/logo.png" alt="Vue logo"> </a> <br> <br>
 <h1>Vue</h1>
 </div>
 
