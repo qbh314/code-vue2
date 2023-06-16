@@ -1,5 +1,7 @@
 <template>
-  <div id="extend"></div>
+  <div id="extend">
+    <h2>用extend创建一个Profile组件</h2>
+  </div>
 </template>
 
 <script>
@@ -28,7 +30,14 @@ export default {
 
 <style lang="less" scoped>
 #extend {
-  background-color: red;
+  min-height: 300px;
+  padding: 24px;
+  border-radius: 2px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f8f8f8;
+
+  h2 {
+    padding-bottom: 24px;
+  }
 }
 </style>
-

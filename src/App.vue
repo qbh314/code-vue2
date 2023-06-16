@@ -98,6 +98,10 @@ h3 {
   margin-inline-end: 0px;
   font-weight: bold;
 }
+
+a {
+  text-decoration: none;
+}
 </style>
 
 <style lang="less" scoped>
@@ -163,6 +167,7 @@ h3 {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
 
     &-inner {
       width: 260px;
@@ -195,4 +200,3 @@ h3 {
   }
 }
 </style>
-

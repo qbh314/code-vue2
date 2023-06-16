@@ -11,7 +11,7 @@ const globalApiRoutes = [
         meta: {
           root: "GlobalApi",
         },
-        component: () => import("@/views/global-api/extend/index.vue"),
+        component: () => import("@/views/global-api/extend-view/index.vue"),
       },
       {
         path: "/slot-view",
