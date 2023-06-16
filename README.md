@@ -35,6 +35,15 @@ npm serve
 npm build
 ```
 
+- 提交
+
+```bash
+git add .
+git cz | git commit -m ""
+git pull
+git push
+```
+
 ## 如何贡献
 
 非常欢迎你的加入！[提一个 Issue](https://github.com/anncwb/vue-vben-admin/issues/new/choose) 或者提交一个 Pull Request。
@@ -64,4 +73,3 @@ npm build
   - `ci` 持续集成
   - `types` 类型定义文件更改
   - `wip` 开发中
-
