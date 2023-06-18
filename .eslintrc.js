@@ -3,6 +3,11 @@ module.exports = {
     browser: true,
     es2021: true,
   },
+  settings: {
+    'import/resolver': {
+      alias: [['@', './src']],
+    },
+  },
   extends: ['plugin:vue/essential', 'airbnb-base'],
   parserOptions: {
     ecmaVersion: 12,
@@ -10,5 +15,8 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['vue', '@typescript-eslint'],
-  rules: {},
+  rules: {
+    'linebreak-style': ['error', 'windows'],
+    'no-console': 'off',
+  },
 };

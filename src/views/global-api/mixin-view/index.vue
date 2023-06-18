@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import { mixinData } from "./mixin.js";
+import mixinData from './mixin';
 
 export default {
-  name: "MixinView",
+  name: 'MixinView',
   mixins: [mixinData],
 };
 </script>

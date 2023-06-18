@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import NavItem from "@/components/nav-item.vue";
+import NavItem from '@/components/nav-item.vue';
 
 export default {
   components: {
@@ -48,9 +48,9 @@ export default {
     getRoutes() {
       let routes = [];
 
-      const files = require.context("@/router", false, /\.js$/);
+      const files = require.context('@/router', false, /\.js$/);
       files.keys().forEach((key) => {
-        if (key === "./index.js") return;
+        if (key === './index.js') return;
         const defaultList = files(key).default;
         routes = routes.concat(defaultList);
       });

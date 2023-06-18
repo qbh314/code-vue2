@@ -4,12 +4,11 @@
 
 <script>
 export default {
-  name: "SlotView",
+  name: 'SlotView',
   data() {
     return {};
   },
 };
 </script>
 
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>

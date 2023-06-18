@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "GlobalApi",
+  name: 'GlobalApi',
 };
 </script>
 
@@ -16,4 +16,3 @@ export default {
   height: 100%;
 }
 </style>
-

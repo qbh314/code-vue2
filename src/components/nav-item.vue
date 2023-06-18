@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "nav-item",
+  name: 'nav-item',
   props: {
     list: {
       type: Array,
@@ -55,4 +55,3 @@ export default {
   }
 }
 </style>
-
